@@ -10,14 +10,14 @@
 <body>
   <form>
     <label>Bill Total: </label>
-    <input type="text" name="billTotal"></input>
-	<label>Tip: <input type="range" name="tipSlider"></label>
+    <input id="billTotal" type="text" value="0.00" name="billTotal"></input>
+	<label>Tip: <input id="tipSlider" type="range" name="tipSlider" min="0" max="100" step="1" value="0"></label>
 	<label>Tip Percentage: </label>
-    <input class="display" type="text" name="tipPercent"></input>
+    <input id="tipPercent" disabled class="display" type="text" name="tipPercent"></input>
 	<label>Tip Amount: </label>
-    <input class="display" type="text" name="tipAmount"></input>
+    <input id="tipAmount" disabled class="display" type="text" value="0.00" name="tipAmount"></input>
 	<label>Total Bill with Tip: </label>
-    <input class="display" type="text" name="grandTotal"></input>
+    <input id="grandTotal" disabled class="display" type="text" value="0.00" name="grandTotal"></input>
   </form>
 </body>
 </html>
