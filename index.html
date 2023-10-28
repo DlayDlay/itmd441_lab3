@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Tip Calculator</title>
-	<link href="styles.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Tip Calculator</title>
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/tipForm.js"></script>
 </head>
 <body>
-    <form>
-        
-    </form>
+  <form>
+    <label>Bill Total: </label>
+    <input type="text" name="billTotal"></input>
+	<label>Tip: <input type="range" name="tipSlider"></label>
+	<label>Tip Percentage: </label>
+    <input class="display" type="text" name="tipPercent"></input>
+	<label>Tip Amount: </label>
+    <input class="display" type="text" name="tipAmount"></input>
+	<label>Total Bill with Tip: </label>
+    <input class="display" type="text" name="grandTotal"></input>
+  </form>
 </body>
 </html>
