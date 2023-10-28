@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', function(){
   let tipPercent = document.getElementById("tipPercent");
   let tipAmount = document.getElementById("tipAmount");
   let grandTotal = document.getElementById("grandTotal");
+  var numbers = /[0-9]./;
   
   tipSlider.addEventListener("input", tipEdit);
-  billTotal.addEventListener("input", billEdit);  
+  billTotal.addEventListener("change", billEdit);  
   
   
   function tipEdit() {
@@ -16,11 +17,16 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   
   function billEdit() {
-	let percent = (parseFloat(tipSlider.value) / 100);
-    let subtotal = parseFloat(billTotal.value);
-    let grand = subtotal + (subtotal * percent);
-	tipAmount.value = Number.parseFloat(subtotal * percent).toFixed(2);
-    grandTotal.value = Number.parseFloat(grand).toFixed(2);
+	if(!(billTotal.value.match(numbers))){
+	  alert("Input should only contain numbers and decimal points");
+	}
+	else{
+	  let percent = (parseFloat(tipSlider.value) / 100);
+      let subtotal = parseFloat(billTotal.value);
+      let grand = subtotal + (subtotal * percent);
+	  tipAmount.value = Number.parseFloat(subtotal * percent).toFixed(2);
+      grandTotal.value = Number.parseFloat(grand).toFixed(2);
+	}	
   }
   
 }); // end DOMContentLoaded
