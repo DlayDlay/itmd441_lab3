@@ -5,10 +5,9 @@ document.addEventListener('DOMContentLoaded', function(){
   let tipPercent = document.getElementById("tipPercent");
   let tipAmount = document.getElementById("tipAmount");
   let grandTotal = document.getElementById("grandTotal");
-  var numbers = /[0-9]./;
   
   tipSlider.addEventListener("input", tipEdit);
-  billTotal.addEventListener("change", billEdit);  
+  billTotal.addEventListener("input", billEdit);  
   
   
   function tipEdit() {
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   
   function billEdit() {
-	if(!(billTotal.value.match(numbers))){
+	if(isNaN(billTotal.value)){
 	  alert("Input should only contain numbers and decimal points");
 	}
 	else{
