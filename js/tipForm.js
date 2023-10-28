@@ -12,16 +12,15 @@ document.addEventListener('DOMContentLoaded', function(){
   
   function tipEdit() {
     tipPercent.value = tipSlider.value;
+	billEdit();
   }
   
   function billEdit() {
 	let percent = (parseFloat(tipSlider.value) / 100);
     let subtotal = parseFloat(billTotal.value);
     let grand = subtotal + (subtotal * percent);
-	tipAmount.value = subtotal * percent;
-    grandTotal.value = grand;
+	tipAmount.value = Number.parseFloat(subtotal * percent).toFixed(2);
+    grandTotal.value = Number.parseFloat(grand).toFixed(2);
   }
-  
-  
   
 }); // end DOMContentLoaded
